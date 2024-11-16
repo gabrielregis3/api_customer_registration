@@ -8,6 +8,7 @@ class CreateCustomerController {
         const { name, email } = request.body as { name: string, email: string };
 
         const customerService = new CreateCustomerService();
+        
         const customer = await customerService.execute({ name, email }); //Service will register on db etc
 
         reply.send(customer);

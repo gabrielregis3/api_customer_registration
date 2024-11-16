@@ -9,7 +9,7 @@ class DeleteCustomerService {
     async execute({ id }: DeleteCustomerProps) {
 
         if (!id) {
-            throw new Error("Requisição inválida!")
+            throw new Error("Invalid request!")
         }
 
         const findCustomer = await prismaClient.customer.findFirst({ //Find the customer by id 
@@ -19,7 +19,7 @@ class DeleteCustomerService {
         })
 
         if (!findCustomer) {
-            throw new Error("Cliente não encontrado!")
+            throw new Error("Client not found!")
         }
 
         await prismaClient.customer.delete({
@@ -28,7 +28,7 @@ class DeleteCustomerService {
             }
         })
 
-        return { message: "Deletado com sucesso!" }
+        return { message: "Deleted successfully!" }
     }
 }
 

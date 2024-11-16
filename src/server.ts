@@ -14,9 +14,9 @@ const start = async () => {
     await app.register(cors);
     await app.register(routes);
 
-    try{
+    try {
         await app.listen({ port: 3333 })
-    }catch (err){
+    } catch (err) {
         process.exit(1)
     }
 }
